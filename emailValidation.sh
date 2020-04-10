@@ -2,11 +2,12 @@
 shopt -s extglob
 
 #Patterns for Email address
-EMAIL_PATTERN="^[a-z0-9]{1,}$"
+EMAIL_PATTERN1="^[a-z0-9]{1,}$"
+EMAIL_PATTERN2="^[@]{1}[a-z0-9]{1,}$"
 
 #To check the validation of Email
 function checkValidation() {
-	if [[ $emailInput =~ $EMAIL_PATTERN ]]
+	if [[ $1 =~ $2 ]]
 	then
 		echo "Valid"
 	else
@@ -16,4 +17,4 @@ function checkValidation() {
 
 #To read the email address as input
 read -p "Enter an Email address: " emailInput
-checkValidation
+checkValidation $emailInput $EMAIL_PATTERN1
