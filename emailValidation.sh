@@ -4,6 +4,7 @@ shopt -s extglob
 #Patterns for Email address
 EMAIL_PATTERN1="^[a-z0-9]{1,}$"
 EMAIL_PATTERN2="^[@]{1}[a-z0-9]{1,}$"
+EMAIL_PATTERN3="^[.]{1}[a-z]{2,4}$"
 
 #To check the validation of Email
 function checkValidation() {
@@ -17,4 +18,4 @@ function checkValidation() {
 
 #To read the email address as input
 read -p "Enter an Email address: " emailInput
-checkValidation $emailInput $EMAIL_PATTERN1
+checkValidation $emailInput $EMAIL_PATTERN3
